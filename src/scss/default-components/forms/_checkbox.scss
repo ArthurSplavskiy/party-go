@@ -1,0 +1,99 @@
+// <div class="checkbox">
+// 	<label class="checkbox__text">
+// 		<input
+// 			checked
+// 			type="checkbox"
+// 			name="agreement"
+// 			class="checkbox__input"
+// 			data-required
+// 		>
+// 		<div class="icon-check"></div>
+// 		<span>ПРИЙМАЮ <a href="privacy-policy.html">УМОВИ</a>ОБРОБКИ ПЕРСОНАЛЬНИХ ДАНИХ</span>
+// 	</label>
+// </div>
+
+// .checkbox {
+// 	position: relative;
+
+// 	&__input {
+// 		position: absolute;
+// 		width: 0;
+// 		height: 0;
+// 		opacity: 0;
+// 		visibility: hidden;
+// 		&:checked + .icon-check {
+// 			background: url("../img/interface/checkbox.svg") center no-repeat;
+// 		}
+// 	}
+// 	.icon-check {
+// 		content: "";
+// 		align-self: flex-start;
+// 		margin: 0px rem(20) 0px 0px;
+// 		flex: 0 0 18px;
+// 		left: 0;
+// 		top: 0;
+// 		width: 18px;
+// 		height: 18px;
+// 		background: transparent;
+// 		border: 2px solid #000;
+// 		border-radius: 1px;
+// 	}
+// 	&__text {
+// 		@extend %geometria14-regular;
+// 		display: inline-flex;
+// 		align-items: center;
+// 		position: relative;
+// 		color: #000;
+// 		cursor: pointer;
+// 		transition: border-color 0.3s ease;
+// 		&._error {
+// 			.icon-check {
+// 				border-color: $red;
+// 			}
+// 		}
+// 	}
+// }
+
+.footer-checkbox {
+	position: relative;
+
+	input {
+		position: absolute;
+		width: 0;
+		height: 0;
+		opacity: 0;
+		visibility: hidden;
+		&:checked + .icon-check {
+			background: $disabled;
+		}
+	}
+	.icon-check {
+		display: inline-flex;
+		align-self:c enter;
+		margin: 0px rem(8) 0px 0px;
+		flex: 0 0 rem(16);
+		width: rem(16);
+		height: rem(16);
+		background: transparent;
+		border-radius: 100%;
+		border: 1px solid $disabled;
+		@media(max-width: $mobileSmall) {
+			flex: 0 0 rem(14);
+			width: rem(14);
+			height: rem(14);
+		}
+	}
+	&__text {
+		@extend %geometria14-regular;
+		display: inline-flex;
+		align-items: center;
+		position: relative;
+		cursor: pointer;
+		transition: border-color 0.3s ease;
+		&._error {
+			.icon-check {
+				border-color: $red;
+			}
+		}
+	}
+}

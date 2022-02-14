@@ -1,0 +1,19 @@
+// * social-list 
+.social {
+    &__list {
+        display: flex;
+        li {
+            &:not(:last-child) {
+                margin-right: em(24);
+            }
+            a {
+                img, svg {
+                    width: rem(32);
+                    @media(max-width: $mobileSmall) {
+                        width: rem(24);
+                    }
+                }
+            }
+        }
+    }
+}

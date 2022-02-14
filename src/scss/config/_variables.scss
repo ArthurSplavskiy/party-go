@@ -1,0 +1,61 @@
+@function rem($px) {
+	$result: math.div($px, 16) + rem;
+	@return $result;
+}
+@function em($px, $current: 16) {
+	$result: math.div($px, $current) + em;
+	@return $result;
+}
+
+// * * * Default font
+$defaultFontFamily: "Montserrat", Arial, Helvetica, sans-serif;
+
+$fontSize: rem(16); // где 16(px) - размер шрифта по умолчанию из макета
+
+// * * * Settings
+// * Page minimal width
+$minWidth: 320;
+// * Frame width (maket)
+$maxWidth: 1440;
+// * Page container width (0 = without container)
+$maxWidthContainer: 1216;
+// * Container padding
+// (30 = 15px left and right, 0 = without padding)
+$containerPadding: 40;
+// * Adaptive type:
+// 1 = отзывчивость (у контейнера нет брейкпоинтов),
+// 2 = по брейк-поинтам (контейнер меняет свою ширину по брейк-поинтам)
+$responsiveType: 1;
+// Ширина страбатывания первого брейкпоинта
+$containerWidth: $maxWidthContainer + $containerPadding;
+// * Breakpoinds
+$fullHd: em(1920);
+$pc: em($containerWidth); // ПК, ноутбуки, некоторые планшеты в горизонтальном положении
+$tablet: em(991.98); // Планшеты, некоторые телефоны в горизонтальном положении
+$mobile: em(767.98); // Телефоны L
+$mobileSmall: em(479.98); // Телефоны S
+// * * * Colors
+// * Main text color
+$woodsmoke: #181A1E;
+$bazaar: #9F8888;
+$primary1:#DFC4C1;
+$primary2:#D0D3E7;
+$white: #ffffff;
+$black: #000000;
+$light-grey: #8D8F93;
+$medium-grey: #62646A;
+$disabled: #E8DEDC;
+$red: #EB5757;
+
+// * Blur
+$blurValue: 69px;
+
+// * trabsition
+$defaultTransition: 0.3s ease;
+
+// * z-indexes
+$z-indexes: (
+  'page-menu',
+  'header',
+  'page-slider'
+);

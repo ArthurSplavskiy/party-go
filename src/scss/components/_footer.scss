@@ -1,0 +1,290 @@
+.footer {
+    @extend %Montserrat16-regular;
+    background: $woodsmoke;
+    color: $primary1;
+    padding: rem(40) 0;
+    @media(max-width: $mobileSmall) {
+        font-size: rem(14);
+    }
+
+    h5 {
+        color: $white;
+        @extend %Montserrat16-medium;
+        @media(max-width: $mobileSmall) {
+            font-size: rem(14);
+        }
+        @media(max-width: $mobileSmall) {
+            margin-bottom: rem(8);
+        }
+    }
+
+    a {
+        transition: color $defaultTransition;
+        svg path {
+            transition: fill $defaultTransition;
+        }
+
+        &:hover {
+            color: $white;
+
+            svg path {
+                fill: $white;
+            }
+        }
+    }
+    a[href^="tel:"] {
+        white-space: nowrap;
+    }
+
+    &__top {
+        display: flex;
+        margin-bottom: rem(48);
+        @media(max-width: $mobileSmall) {
+            margin-bottom: rem(16);
+        }
+        .footer__right-side {
+            @media(max-width: $mobileSmall) {
+                display: none;
+            }
+        }
+    }
+    &__bottom {
+        display: flex;
+        @media(max-width: $mobileSmall) {
+            border-top: 1px solid $bazaar;
+            padding-top: rem(16);
+        }
+        .footer__left-side {
+            @media(max-width: $mobileSmall) {
+               display: none;
+            }
+        }
+        .footer__right-side {
+            @media(max-width: $mobileSmall) {
+                display: grid;
+                grid-template-columns: 1fr;
+                & > * {
+                    margin: auto;
+                }
+            }
+        }
+    }
+    &__right-side {
+        display: flex;
+        justify-content: space-between;
+        flex: 0 0 62%;
+
+        .footer__column_first {
+            order: 1;
+        }
+        .footer__column_second {
+            order: 2;
+        }
+
+        @media(max-width: 1116px) {
+            flex: 1 1 auto;
+        }
+
+        h5 {
+            margin-bottom: rem(24);
+            @media(max-width: $mobileSmall) {
+                margin-bottom: rem(8);
+            }
+        }
+
+        .footer__links {
+            li {
+                &:not(:last-child) {
+                    margin-bottom: rem(24);
+                }
+            }
+        }
+        .footer__column_second {
+            flex: 1 1 auto;
+            margin-left: rem(102);
+            @media(max-width: 1116px) {
+                margin-left: rem(24);
+            }
+        }
+    }
+    &__left-side {
+        display: flex;
+        flex: 1 1 auto;
+
+        @media(max-width: $tablet) {
+            margin-right: rem(24);
+            flex: 0 0 25%;
+        }
+        @media(max-width: $mobileSmall) {
+            display: block;
+            flex: 0 0 100%;
+            margin-right: 0;
+        }
+
+        h5 {
+            margin-bottom: rem(16);
+            @media(max-width: $mobileSmall) {
+                margin-bottom: rem(8);
+            }
+        }
+
+        .footer__column:first-child {
+            margin-right: rem(136);
+            @media(max-width: 1116px) {
+                margin-right: rem(48);
+            }
+            @media(max-width: $tablet) {
+                margin-right: 0;
+            }
+        }
+        .footer__column:nth-child(2) {
+            margin-right: rem(24);
+        }
+    }
+    &__column {
+        display: flex;
+        flex-direction: column;
+
+        &_first {
+            .footer__column._dynamic_adapt_ {
+                @media(max-width: $tablet) {
+                    margin-right: 0;
+                    margin-bottom: rem(24);
+                }
+            }
+        }
+    }
+    &__logo {
+        max-width: rem(128);
+        margin-bottom: rem(24);
+
+        & + .footer__column .footer__links {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+    &__social {
+        margin-top: auto;
+        @media(max-width: $mobileSmall) {
+            margin-bottom: rem(24);
+        }
+        span:first-child {
+            @extend %Montserrat16-medium;
+            display: block;
+            color: $white;
+            margin-bottom: rem(24);
+            @media(max-width: $mobileSmall) {
+                margin-bottom: rem(8);
+            }
+        }
+    }
+    &__links {
+        li {
+            &:not(:last-child) {
+                margin-bottom: rem(16);
+                @media(max-width: $mobileSmall) {
+                    margin-bottom: rem(8);
+                }
+            }
+        }
+    }
+    &__form {
+        display: flex;
+        flex-direction: column;
+        flex: 1 1 100%;
+        span:first-child {
+            margin-bottom: rem(24);
+        }
+
+        .input-field {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+        .checkbox-field {
+            display: flex;
+            flex-wrap: wrap;
+            margin: rem(20) 0 rem(16) 0;
+            @media(max-width: $mobileSmall) {
+                margin: rem(20) 0 rem(8) 0;
+            }
+        }
+        input {
+            
+            background: none;
+            border-bottom: 1px solid $primary1;
+            transition: all $defaultTransition;
+            padding-bottom: rem(8);
+            color: $white;
+
+            & + .form__error {
+                position: absolute;
+                top: 100%;
+                left: 0;
+            }
+            &._error {
+                border-color: $red;
+                color: $red;
+                @include placeholder-content {
+                    color:  $red;
+                }
+            }
+            &:focus {
+                border-color: $white;
+                @include placeholder-content {
+                    color: $white;
+                }
+            }
+            @include placeholder-content {
+                transition: color $defaultTransition;
+                color: $primary1;
+            }
+        }
+        button {
+            @extend %Montserrat14-medium;
+            line-height: 100%;
+            display: inline-block;
+            margin-left: auto;
+            padding: rem(17) rem(50);
+            border-radius: rem(30);
+            border: 1px solid $primary1;
+            color: $primary1;
+            transition: all $defaultTransition;
+            &:hover {
+                background: $white;
+                border-color: $white;
+                color: $black;
+            }
+            @media(max-width: $mobileSmall) {
+                padding: rem(17) rem(27);
+            }
+        }
+        .footer-checkbox {
+            &:not(:last-child) {
+                margin: 0 rem(24) rem(8) 0;
+                @media(max-width: $mobileSmall) {
+                    margin: 0 rem(16) rem(8) 0;
+                }
+            }
+        }
+    }
+    
+    &__copyright {
+        display: flex;
+        align-items: center;
+        a:first-child {
+            text-decoration: underline;
+            @media(min-width: $mobileSmall) {
+                margin-right: rem(24);
+            }
+        }
+        img {
+            vertical-align: middle;
+            @media(max-width: $mobileSmall) {
+                max-width: rem(88);
+                vertical-align: middle;
+                // padding-bottom: em(4);
+            }
+        }
+    }
+}
