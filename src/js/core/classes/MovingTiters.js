@@ -1,6 +1,11 @@
 export default class MovingTiters {
     constructor(options) {
-        this.titers = options.dom
+        if(typeof options.dom === 'string') {
+            this.titers = document.querySelectorAll(options.dom)
+        } else {
+            this.titers = options.dom
+        }
+        
         this.createTiters()
     }
 

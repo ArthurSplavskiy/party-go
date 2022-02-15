@@ -9,6 +9,7 @@
 
 // * * * Default font
 $defaultFontFamily: "Montserrat", Arial, Helvetica, sans-serif;
+$manropeFontFamily: "Manrope", Arial, Helvetica, sans-serif;
 
 $fontSize: rem(16); // где 16(px) - размер шрифта по умолчанию из макета
 
@@ -19,6 +20,7 @@ $minWidth: 320;
 $maxWidth: 1440;
 // * Page container width (0 = without container)
 $maxWidthContainer: 1216;
+$maxWidthContainerPX: 1216px;
 // * Container padding
 // (30 = 15px left and right, 0 = without padding)
 $containerPadding: 40;
@@ -38,14 +40,18 @@ $mobileSmall: em(479.98); // Телефоны S
 // * Main text color
 $woodsmoke: #181A1E;
 $bazaar: #9F8888;
+$bizarre:#EEDAD8;
 $primary1:#DFC4C1;
 $primary2:#D0D3E7;
+$primary3:#B1D3BF;
 $white: #ffffff;
 $black: #000000;
 $light-grey: #8D8F93;
 $medium-grey: #62646A;
+$snuff: #E0E2F1;
 $disabled: #E8DEDC;
 $red: #EB5757;
+
 
 // * Blur
 $blurValue: 69px;
@@ -57,5 +63,6 @@ $defaultTransition: 0.3s ease;
 $z-indexes: (
   'page-menu',
   'header',
-  'page-slider'
+  'wrapper',
+  'page-bg'
 );

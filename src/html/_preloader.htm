@@ -1,9 +1,17 @@
-<div class="preloader">
-    <div class="preloader__wrapper">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
-</div>
+<style>
+    .preloader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 9999;
+        background-color: #DFC4C1;
+        transition: opacity 0.5s ease 2.1s;
+        pointer-events: none;
+    }
+    html.loaded .preloader {
+        opacity: 0;
+    }
+</style>
+<div class="preloader"></div>

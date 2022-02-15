@@ -1,6 +1,10 @@
 export default class ScrollObserver {
     constructor (element = null, animationIn = null, animationOut = null, options = {}) {
-        this.element = element
+        if(typeof element === 'string') {
+            this.element = document.querySelectorAll(element)
+        } else {
+            this.element = element
+        }
         this.animationIn = animationIn
         this.animationOut = animationOut
         this.options = options // 1.0 - (100% element scroll) 0.9 - 90%(100% element scroll)

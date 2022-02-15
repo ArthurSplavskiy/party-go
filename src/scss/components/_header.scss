@@ -1,10 +1,14 @@
 .header {
-	position: relative;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
 	min-height: rem(94);
 	color: $white;
-	background: $woodsmoke;
+	background: transparent;
 	z-index: z('header');
-	display: flex;
+	display: flex;	
+	transition: all $defaultTransition;
 
 	&:hover {
 		background: $woodsmoke;
@@ -82,6 +86,7 @@
 	}
 	&__phone {
 		@extend %Montserrat14-semibold;
+		@extend %link-hover;
 		white-space: nowrap;
 	}
 	&__currency, &__language {

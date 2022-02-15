@@ -111,18 +111,24 @@
 %Montserrat12-regular {
 	font-family: $defaultFontFamily;
 	font-size: rem(12);
-	line-height: rem(16);
+	line-height: math.div(16, 12);
 	font-weight: 400;
+}
+%Montserrat12-medium {
+	font-family: $defaultFontFamily;
+	font-size: rem(12);
+	line-height: math.div(18, 12);
+	font-weight: 500;
 }
 %Montserrat12-16-medium {
 	font-family: $defaultFontFamily;
 	font-size: rem(12);
-	line-height: rem(14);
+	line-height: math.div(14, 12);
 	font-weight: 500;
 
 	@media(max-width: $mobileSmall) {
 		font-size: rem(16);
-		line-height: rem(24);
+		line-height: math.div(24, 16);
 	}
 }
 
@@ -136,7 +142,7 @@
 %Montserrat14-medium {
 	font-family: $defaultFontFamily;
 	font-size: rem(14);
-	line-height: rem(24);
+	line-height: math.div(24, 14);
 	font-weight: 500;
 }
 %Montserrat14-semibold {
@@ -147,24 +153,110 @@
 }
 
 // * 16
+%Montserrat16-14-light {
+	font-family: $defaultFontFamily;
+	font-size: rem(16);
+	line-height: math.div(24, 16);
+	font-weight: 300;
+
+	@media(max-width: $mobileSmall) {
+		font-size: rem(14);
+		line-height: math.div(24, 14);
+	}
+}
 %Montserrat16-light {
 	font-family: $defaultFontFamily;
 	font-size: rem(16);
-	line-height: rem(24);
+	line-height: math.div(24, 16);
 	font-weight: 300;
 }
 %Montserrat16-regular {
 	font-family: $defaultFontFamily;
 	font-size: rem(16);
-	line-height: rem(24);
+	line-height: math.div(24, 16);
 	font-weight: 400;
 }
 %Montserrat16-medium {
 	font-family: $defaultFontFamily;
 	font-size: rem(16);
-	line-height: rem(24);
+	line-height: math.div(24, 16);
 	font-weight: 500;
 }
+
+// * 24
+%Montserrat24-20-medium {
+	font-family: $defaultFontFamily;
+	font-size: rem(24);
+	line-height: math.div(32, 24);
+	font-weight: 500;
+
+	@media(max-width: $mobileSmall) {
+		font-size: rem(20);
+		line-height: math.div(30, 20);
+	}
+}
+
+// * 32
+%Montserrat32-14-light {
+	font-family: $defaultFontFamily;
+	font-size: rem(32);
+	line-height: math.div(40, 32);
+	font-weight: 300;
+
+	@media(max-width: $mobileSmall) {
+		font-size: rem(14);
+		line-height: math.div(24, 14);
+	}
+}
+
+%Montserrat32-14-medium {
+	font-family: $defaultFontFamily;
+	font-size: rem(32);
+	line-height: math.div(40, 32);
+	font-weight: 500;
+
+	@media(max-width: $mobileSmall) {
+		font-size: rem(14);
+		line-height: math.div(24, 14);
+	}
+}
+
+
+
+// * 56
+%Manrope56-40-medium {
+	font-family: $manropeFontFamily;
+	font-size: rem(56);
+	line-height: math.div(58, 56);
+	font-weight: 500;
+
+	@media(max-width: $mobileSmall) {
+		font-size: rem(40);
+		line-height: math.div(44, 40);
+	}
+}
+
+// * 96-56
+%Manrope96-56-medium {
+	font-family: $manropeFontFamily;
+	font-size: rem(96);
+	line-height: math.div(122, 96);
+	font-weight: 500;
+
+	@media(max-width: $mobileSmall) {
+		font-size: rem(56);
+		line-height: 100%;
+	}
+}
+
+
+
+
+
+
+
+
+
 
 
 

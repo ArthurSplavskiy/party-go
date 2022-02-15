@@ -29,6 +29,8 @@ body {
 	display: flex;
     flex-direction: column;
     justify-content: space-between;
+	position: relative;
+	z-index: z('wrapper');
 
 	// * Page is loaded
 	.loaded & {
@@ -42,8 +44,17 @@ body {
 	// 	margin-top: rem(76);
 	// }
 
-	.page__home {
-
+	&__image-ibg{
+		position: fixed!important;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		height: 100vh;
+		z-index: z('page-bg');
+		img {
+			position: fixed;
+		}
 	}
 }
 
@@ -121,37 +132,6 @@ body {
 
 [data-spoller] svg {
 	width: rem(12);
-}
-
-
-
-
-
-
-h2 {
-	@extend %geometria80-40-medium;
-	text-transform: uppercase;
-
-	* {
-		word-wrap: break-word;
-	}
-	& > div {
-		overflow: hidden;
-
-		div {
-			transform: translateY(100%);
-		}
-	}
-	@media(max-width: $mobileSmall) {
-        line-height: 110%!important;
-    }
-}
-h3 {
-	@extend %geometria40-medium;
-	text-transform: uppercase;
-}
-h4 {
-	@extend %geometria24-18-medium;
 }
 
 .s-mb {

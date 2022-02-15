@@ -4,10 +4,175 @@
 		"title":"Головна"
 	})
 	<body>
-		<div class="wrapper">
+		<div class="page__image-ibg">
+			<img src="img/girl-bg.png" alt="Party Go">
+		</div>
+		<div class="wrapper" id="page-top">
 			@@include('html/_header.htm',{})
-			<main class="page">
-				<div class="_container"></div>
+			<main class="page home-page">	
+
+				<div class="intro" data-intro>
+					<div class="intro__content">
+
+						<div class="intro__item intro-item" data-intro-item>
+							<div class="intro-item__bg" style="background-image: url('img/go-girls.jpeg');"></div>
+							<div class="intro-item__content">
+								<div class="intro-item__head">
+									<h2>Go Girls</h2>
+									<p>Ми з радісттю та без зайвих клопотів допоможемо організувати незабутнє свято</p>
+								</div>
+								<a href="girls.html" class="primary-btn">Go Girls</a>
+							</div>
+						</div>
+
+						<div class="intro__item intro-item" data-intro-item>
+							<div class="intro-item__bg" style="background-image: url('img/go-corporates.jpeg');"></div>
+							
+							<div class="intro-item__content">
+								<div class="_container">
+									<div class="intro-item__head">
+										<h2>Go Corporates</h2>
+										<p>Ми з радісттю та без зайвих клопотів допоможемо організувати незабутнє свято</p>
+									</div>
+									<a href="corporates.html" class="primary-btn primary-btn_green">Go Corporates</a>
+								</div>
+							</div>
+						</div>
+
+						<div class="intro__item intro-item" data-intro-item>
+							<div class="intro-item__bg" style="background-image: url('img/go-boys.jpeg');"></div>
+							<div class="intro-item__content">
+								<div class="intro-item__head">
+									<h2>Go Boys</h2>
+									<p>Ми з радісттю та без зайвих клопотів допоможемо організувати незабутнє свято</p>
+								</div>
+								<a href="boys.html" class="primary-btn primary-btn_white">Go Boys</a>
+							</div>
+						</div>
+
+					</div>
+				</div>
+
+				<section class="page-section">
+					<div class="_container">
+						<div class="page-section__content">
+							<div class="page-section__head">
+								<h2>PARTY GO</h2>
+								<span>Організуємо незабутню вечірку</span>
+								<p>В житті кожного є особливі моменти і події які назавжди хочеться закарбувати  у своїй пам’яті. Для того щоб вони з дня в день переносили нас в приємні спогади і дарували массу емоцій і щастя як в “той самий день”. Ми з радістю та без зайвих клопотів допоможемо організувати незабутнє свято.</p>
+								<a class="primary-btn primary-btn_black" href="about.html" data-da="[data-id='1'], 992, last">ПРО НАС</a>
+							</div>
+							<div class="page-section__body" data-id="1">
+								
+								<ul class="service-list">
+									<li data-scroll="0.5">
+										<p>Швидка організація вечірки з врахуванням усіх побажань</p>
+									</li>
+									<li data-scroll="0.5">
+										<p>Повний супровід вашого свята</p>
+									</li>
+									<li data-scroll="0.5">
+										<p>Молода, професійна та креативна команда</p>
+									</li>
+									<li data-scroll="0.5">
+										<p>Незабутні враження без зайвого клопоту</p>
+									</li>
+								</ul>
+
+							</div>
+						</div>
+					</div>
+				</section>
+
+				@@include('html/_titers.htm',{
+					"text": "/ party go"
+				})
+
+				<div class="page-heading">
+					<div class="_container">
+						<h2>Наші переваги</h2>
+
+						<div class="page-spollers" data-spollers data-one-spoller>
+
+							<div class="page-spollers__item spoller-item" data-scroll="0.5">
+								<div class="spoller-item__head" data-spoller>
+									<div class="spoller-item__content">
+										<span>Чим наш сервіс особливий?</span>
+									</div>
+									<div class="spoller-item__close">
+										<img data-src="img/interface/spoller-close.svg" data-inline-svg alt="Party Go">
+										<img data-src="img/interface/shevron.svg" data-inline-svg alt="Party Go">
+									</div>
+								</div>
+								<div class="spoller-item__body">
+									<div class="spoller-item__content">
+										<p>Ми з радісттю та без зайвих клопотів допоможемо організувати незабутнє свято. Ми врахуємо усі твої побажання. Найголовніше - це увага до деталей! Ми подаруємо тобі неймовірне та незабутнє свято! Ти зможеш забути про переживання та хлопоти замовивши наші послуги. Зроби своє свято особливим без зайвих турбот та переживань.</p>
+									</div>
+								</div>
+							</div>
+
+							<div class="page-spollers__item spoller-item" data-scroll="0.5">
+								<div class="spoller-item__head" data-spoller>
+									<div class="spoller-item__content">
+										<span>Чому ти маєш обрати саме нас?</span>
+									</div>
+									<div class="spoller-item__close">
+										<img data-src="img/interface/spoller-close.svg" data-inline-svg alt="Party Go">
+										<img data-src="img/interface/shevron.svg" data-inline-svg alt="Party Go">
+									</div>
+								</div>
+								<div class="spoller-item__body">
+									<div class="spoller-item__content">
+										<p>Ми з радісттю та без зайвих клопотів допоможемо організувати незабутнє свято. Ми врахуємо усі твої побажання. Найголовніше - це увага до деталей! Ми подаруємо тобі неймовірне та незабутнє свято! Ти зможеш забути про переживання та хлопоти замовивши наші послуги. Зроби своє свято особливим без зайвих турбот та переживань.</p>
+										<p>Ми з радісттю та без зайвих клопотів допоможемо організувати незабутнє свято. Ми врахуємо усі твої побажання. Найголовніше - це увага до деталей! Ми подаруємо тобі неймовірне та незабутнє свято! Ти зможеш забути про переживання та хлопоти замовивши наші послуги. Зроби своє свято особливим без зайвих турбот та переживань.</p>
+									</div>
+								</div>
+							</div>
+
+							<div class="page-spollers__item spoller-item" data-scroll="0.5">
+								<div class="spoller-item__head" data-spoller>
+									<div class="spoller-item__content">
+										<span>Чи можна замовити додаткові послуги?</span>
+									</div>
+									<div class="spoller-item__close">
+										<img data-src="img/interface/spoller-close.svg" data-inline-svg alt="Party Go">
+										<img data-src="img/interface/shevron.svg" data-inline-svg alt="Party Go">
+									</div>
+								</div>
+								<div class="spoller-item__body">
+									<div class="spoller-item__content">
+										<p>Ми з радісттю та без зайвих клопотів допоможемо організувати незабутнє свято. Ми врахуємо усі твої побажання. Найголовніше - це увага до деталей! Ми подаруємо тобі неймовірне та незабутнє свято! Ти зможеш забути про переживання та хлопоти замовивши наші послуги. Зроби своє свято особливим без зайвих турбот та переживань.</p>
+									</div>
+								</div>
+							</div>
+
+							<div class="page-spollers__item spoller-item" data-scroll="0.5">
+								<div class="spoller-item__head" data-spoller>
+									<div class="spoller-item__content">
+										<span>Як швидко все буде організовано?</span>
+									</div>
+									<div class="spoller-item__close">
+										<img data-src="img/interface/spoller-close.svg" data-inline-svg alt="Party Go">
+										<img data-src="img/interface/shevron.svg" data-inline-svg alt="Party Go">
+									</div>
+								</div>
+								<div class="spoller-item__body">
+									<div class="spoller-item__content">
+										<p>Ми з радісттю та без зайвих клопотів допоможемо організувати незабутнє свято. Ми врахуємо усі твої побажання. Найголовніше - це увага до деталей! Ми подаруємо тобі неймовірне та незабутнє свято! Ти зможеш забути про переживання та хлопоти замовивши наші послуги. Зроби своє свято особливим без зайвих турбот та переживань.</p>
+									</div>
+								</div>
+							</div>
+
+						</div>
+
+					</div>
+				</div>
+
+				<a href="#page-top" class="anchor-top" data-anchor>
+					<img class="anchor-top__ellipse" src="img/interface/anchor-ellipse.svg" alt="Party Go">
+					<img class="anchor-top__arrow" src="img/interface/anchor-arrow.svg" alt="Party Go">
+				</a>
+
 			</main>
 			@@include('html/_footer.htm',{})
 			@@include('html/_js.htm',{})

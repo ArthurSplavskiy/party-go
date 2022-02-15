@@ -158,6 +158,18 @@
         max-width: rem(128);
         margin-bottom: rem(24);
 
+        
+        a {
+            svg path {
+                transition: fill $defaultTransition;
+            }
+            &:hover {
+                svg path {
+                    fill: $bazaar;
+                }
+            }
+        }
+
         & + .footer__column .footer__links {
             display: grid;
             grid-template-columns: repeat(2, 1fr);

@@ -1,8 +1,12 @@
 import { isTarget, removeClasses, _slideUp } from '../../core/utils/functions.js'
+import { gotoBlock } from '../../core/scroll/gotoblock.js'
+import { isView } from './app.functions.js'
+import MovingTiters from '../../core/classes/MovingTiters.js'
+import ScrollObserver from '../../core/classes/ScrollObserver.js'
 
 export default class App {
     constructor () {
-        this.scrollIsViewElements = document.querySelectorAll('[data-is-view]') ?? null
+        this.scrollElements = document.querySelectorAll('[data-scroll]') ?? null
         
         this.init()
     }
@@ -12,6 +16,10 @@ export default class App {
         this.domCalculate()
         this.addEventListeners()
         this.scrollAnimation()
+
+        new MovingTiters({
+            dom: '.titers'
+        })
     }
 
 
@@ -30,7 +38,15 @@ export default class App {
         * Animation
     */
     scrollAnimation () {
+        if(this.scrollElements.length > 0) {
+            const options = {
+                threshold: 0
+            }
 
+            this.scrollElements.forEach(item =>  item.getAttribute('data-scroll') ? options.threshold = item.getAttribute('data-scroll') : null)
+            
+            new ScrollObserver(this.scrollElements, isView, null, options)
+        }
     }
 
 
@@ -47,20 +63,12 @@ export default class App {
         /*
             * Anchor
         */
-        if (targetElement.closest('[data-anchor]')) {
-            gotoBlock(targetElement.getAttribute("href"))
+        const $anchorLink = isTarget(targetElement, '[data-anchor]')
+        if ($anchorLink) {
+            gotoBlock($anchorLink.getAttribute("href"))
 			e.preventDefault();
 		}
-        /*  
-            * Sublist open
-        */
-        // const $sublist = isTarget(targetElement, '[data-subtrigger]')
-        // if ($sublist && !$sublist.classList.contains('_active')) {
-        //     removeClasses('[data-subtrigger]', '_active')
-        //     $sublist.classList.add('_active')
-        // } else {
-        //     removeClasses('[data-subtrigger]', '_active')
-        // }
+
         /*  
             * Header Spollers
         */
@@ -69,6 +77,7 @@ export default class App {
             removeClasses('.header [data-spoller]', '_spoller-active')
             _slideUp('.header [data-spoller] + *', 500);
         }
+
         /*  
             * Menu Spollers
         */
@@ -76,6 +85,29 @@ export default class App {
         if(!$targetMenuSpoller) {
             removeClasses('.page-menu [data-spoller]', '_spoller-active')
             _slideUp('.page-menu [data-spoller] + *', 500);
+        }
+
+        /*  
+            * Intro Animation
+        */
+        const $introItem = isTarget(targetElement, '[data-intro-item]')
+        if($introItem) {
+            const introTransition = 1400
+            const $introComponent = $introItem.closest('[data-intro]')
+            const $introItems = $introComponent.querySelectorAll('[data-intro-item]')
+
+            if(!$introComponent.classList.contains('_hold')) {
+                $introItems.forEach(item => item.classList.remove('_active', '_reduced'))
+                $introItem.classList.add('_active')
+                $introItems.forEach(item => {
+                    if(!item.classList.contains('_active')) {
+                        item.classList.add('_reduced')
+                    }
+                })
+                $introComponent.classList.add('_hold')
+            }
+
+            setTimeout(() => $introComponent.classList.remove('_hold'), introTransition)
         }
     }
    
