@@ -10,6 +10,7 @@ export default class ScrollObserver {
         this.options = options // 1.0 - (100% element scroll) 0.9 - 90%(100% element scroll)
 
         this.createObserver()
+        this.$subscribe()
     }
 
     createObserver () {
@@ -19,17 +20,19 @@ export default class ScrollObserver {
                 if (entry.isIntersecting) {
                     if(this.animationIn !== null) {
                         this.animationIn(entry.target)
+                        this.observer.unobserve(entry.target)
                     }
-                    //console.log(entry.target)
                 } else {
                     if(this.animationOut !== null) {
                         this.animationOut(entry.target)
                     }
-                    //console.log('observer out')
                 }
             })
         }, this.options)
+        
+    }
 
+    $subscribe () {
         if(this.element instanceof NodeList) {
             this.element.forEach(el => {
                 this.observer.observe(el)
@@ -42,8 +45,9 @@ export default class ScrollObserver {
         else {
             this.observer.observe(this.element)
         }
-        
     }
+
+    $unsubscribe () {}
     
 }
 

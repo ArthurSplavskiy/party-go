@@ -1,4 +1,4 @@
-import LazyLoad from "vanilla-lazyload";
+//import LazyLoad from "vanilla-lazyload";
 
 // Работает с объектами с класом ._lazy
 

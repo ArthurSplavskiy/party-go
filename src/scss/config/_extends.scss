@@ -104,6 +104,13 @@
 		color: $bazaar;
 	}
 }
+%cover {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
 
 // * * * Fonts
 
@@ -133,6 +140,15 @@
 }
 
 // * 14
+%Montserrat14-12-medium {
+	font-family: $defaultFontFamily;
+	font-size: rem(14);
+	line-height: 100%;
+	font-weight: 500;
+	@media(max-width: $mobileSmall) {
+		font-size: rem(12);
+	}
+}
 %Montserrat14-ligth {
 	font-family: $defaultFontFamily;
 	font-size: rem(14);
@@ -164,6 +180,17 @@
 		line-height: math.div(24, 14);
 	}
 }
+%Montserrat16-14-medium {
+	font-family: $defaultFontFamily;
+	font-size: rem(16);
+	line-height: math.div(28, 16);
+	font-weight: 500;
+
+	@media(max-width: $mobileSmall) {
+		font-size: rem(14);
+		line-height: math.div(24, 14);
+	}
+}
 %Montserrat16-light {
 	font-family: $defaultFontFamily;
 	font-size: rem(16);
@@ -183,7 +210,26 @@
 	font-weight: 500;
 }
 
+// * 18
+%Montserrat18-regular {
+	font-family: $defaultFontFamily;
+	font-size: rem(18);
+	line-height: math.div(28, 18);
+	font-weight: 400;
+}
+
 // * 24
+%Montserrat24-18-medium {
+	font-family: $defaultFontFamily;
+	font-size: rem(24);
+	line-height: math.div(38, 24);
+	font-weight: 500;
+
+	@media(max-width: $mobileSmall) {
+		font-size: rem(18);
+		line-height: math.div(28, 18);
+	}
+}
 %Montserrat24-20-medium {
 	font-family: $defaultFontFamily;
 	font-size: rem(24);
@@ -223,6 +269,19 @@
 
 
 
+// * 40
+%Manrope40-24-medium {
+	font-family: $manropeFontFamily;
+	font-size: rem(40);
+	line-height: math.div(48, 40);
+	font-weight: 500;
+
+	@media(max-width: $mobileSmall) {
+		font-size: rem(24);
+		line-height: math.div(30, 24);
+	}
+}
+
 // * 56
 %Manrope56-40-medium {
 	font-family: $manropeFontFamily;
@@ -236,7 +295,20 @@
 	}
 }
 
-// * 96-56
+// * 88
+%Manrope88-40-medium {
+	font-family: $manropeFontFamily;
+	font-size: rem(88);
+	line-height: math.div(90, 88);
+	font-weight: 500;
+
+	@media(max-width: $mobileSmall) {
+		font-size: rem(40);
+		line-height: 100%;
+	}
+}
+
+// * 96
 %Manrope96-56-medium {
 	font-family: $manropeFontFamily;
 	font-size: rem(96);
@@ -248,6 +320,7 @@
 		line-height: 100%;
 	}
 }
+
 
 
 

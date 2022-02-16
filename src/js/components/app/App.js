@@ -109,6 +109,14 @@ export default class App {
 
             setTimeout(() => $introComponent.classList.remove('_hold'), introTransition)
         }
+
+        /*  
+            * Favorite toggle
+        */
+        const $favoriteIcon = isTarget(targetElement, '[data-favorite]')
+        if($favoriteIcon) {
+            $favoriteIcon.classList.toggle('_active')
+        }
     }
    
 

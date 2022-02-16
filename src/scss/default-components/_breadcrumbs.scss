@@ -1,6 +1,6 @@
 .breadcrumbs {
-    @extend %geometria14-regular;
-    color: $white;
+    @extend %Montserrat14-12-medium;
+    color: $disabled;
 	display: flex;
 	align-items: center;
 
@@ -22,12 +22,13 @@
                     margin-right: 8px; 
                 }
                 &:after {
-                    content: '-';
-                    transform: scale(2, 1);
+                    content: '';
+                    display: block;
+                    width: rem(4);
+                    height: rem(4);
+                    border-radius: 100%;
+                    background: $disabled;
                 }
-            }
-            &:last-child {
-                color: $mainColor;
             }
 			span {
 				white-space: nowrap;

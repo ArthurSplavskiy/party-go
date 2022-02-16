@@ -5,7 +5,7 @@
 	})
 	<body>
 		<div class="page__image-ibg">
-			<img src="img/girl-bg.png" alt="Party Go">
+			<img src="img/main-bg.png" alt="Party Go">
 		</div>
 		<div class="wrapper" id="page-top">
 			@@include('html/_header.htm',{})
@@ -168,10 +168,9 @@
 					</div>
 				</div>
 
-				<a href="#page-top" class="anchor-top" data-anchor>
-					<img class="anchor-top__ellipse" src="img/interface/anchor-ellipse.svg" alt="Party Go">
-					<img class="anchor-top__arrow" src="img/interface/anchor-arrow.svg" alt="Party Go">
-				</a>
+				@@include('html/_page-anchor.htm',{
+					"direction": "top"
+				})
 
 			</main>
 			@@include('html/_footer.htm',{})
@@ -179,3 +178,14 @@
 		</div>
 	</body>
 </html>
+
+<!-- <section class="page-section">
+	<div class="_container">
+		<div class="page-section__content">
+			<div class="page-section__head">
+				<h2>Наші пропозиції</h2>
+				<span>У нас є багато ідей та пропозицій для проведення дівичвечорів. Кожен неповторний та незабутній. Цей вечір ви запам’ятаєте надовго.</span>
+			</div>
+		</div>
+	</div>
+</section> -->

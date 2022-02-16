@@ -134,6 +134,23 @@ body {
 	width: rem(12);
 }
 
+[data-favorite] {
+	cursor: pointer;
+	&._active {
+		svg path {
+			fill: $woodsmoke;
+		}
+	}
+	svg {
+		width: 16px;
+	}
+	svg path {
+		fill: none;
+		stroke: $woodsmoke;
+		transition: fill $defaultTransition;
+	}
+}
+
 .s-mb {
 	margin-bottom: rem(168);
 

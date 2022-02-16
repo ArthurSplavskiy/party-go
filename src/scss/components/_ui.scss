@@ -66,6 +66,14 @@
             background: $black;
         }
     }
+    &_section {
+        @media(max-width: $tablet) {
+            margin: rem(40) 0 auto auto;
+            flex: 0 0 rem(128);
+            width: rem(128);
+            height: rem(128);
+        }
+    }
 }
 
 // * service-list
@@ -182,6 +190,11 @@
             margin-top: rem(40);
             display: flex;
             margin-left: auto;
+        }
+        &_contentend {
+            display: flex;
+            justify-content: flex-end;
+            flex-direction: column;
         }
     }
 }
@@ -300,16 +313,17 @@
 }
 
 // * anchor-top 
-.anchor-top {
-    width: rem(188);
-    height: rem(188);
+.page-anchor {
+    width: rem(150);
+    height: rem(150);
     position: relative;
     margin: rem(100) auto;
     display: block;
+    position: relative;
 
     @media(max-width: $mobileSmall) {
-        width: rem(120);
-        height: rem(120);
+        width: rem(76);
+        height: rem(76);
         margin: rem(40) auto;
     }
 
@@ -320,22 +334,316 @@
     }
 
     &:hover {
-        .anchor-top__ellipse {
-            transform: rotate(-45deg) translate(-50%, -50%);
+        .page-anchor__ellipse {
+            transform: rotate(-45deg);
         }
-        .anchor-top__arrow {
+        .page-anchor__arrow {
             transform: scaleY(1.2) translate(-50%, -50%);
-        }   
+        }  
     }
 
-    .anchor-top__ellipse {
+    .page-anchor__ellipse {
+        @extend %cover;
         transition: transform $defaultTransition;
-        transform-origin: top left;
-        transform: translate(-50%, -50%);
+        transform-origin: center;
+        width: 100%;
+        height: 100%;
     }
-    .anchor-top__arrow {
+    .page-anchor__arrow {
         transition: transform $defaultTransition;
         transform-origin: center;
         transform: translate(-50%, -50%);
+        height: rem(65);
+        @media(max-width: $mobileSmall) {
+            height: rem(40);
+        }
+    }
+
+    &_bottom {
+        .page-anchor__arrow {
+            transform: translate(-50%, -50%) rotate(180deg);
+            path {
+                fill: $primary1;
+            }
+        }
+        .page-anchor__ellipse {
+            path {
+                stroke: $primary1;
+            }
+        }
+        &:hover {
+            .page-anchor__arrow {
+                transform: scaleY(1.2) translate(-50%, -40%) rotate(180deg);
+            }
+        }
+    }
+}
+
+// * first-screen
+.first-screen {
+    height: 100vh;
+    min-height: rem(600);
+    position: relative;
+    color: $white;
+    &__image-ibg {
+        @extend %cover;
+        height: 100%;
+        &:after {
+            @extend %cover;
+            content: '';
+            display: block;
+            background: rgba($black, 0.5);
+        }
+    }
+    &__content {
+        position: relative;
+        height: 100%;
+        padding: rem(100) 0 rem(80) 0;
+        @media(max-width: $mobileSmall) {
+            padding: rem(60) 0 rem(46) 0;
+        }
+
+        &-wrapper {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .page-anchor {
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            margin: 0;
+            transform: translate(-50%, 50%);
+        }
+        ._container {
+            height: 100%;
+        }
+        .primary-btn {
+            margin: auto 0 0 auto;
+            
+            @media(max-width: $mobileSmall) {
+                flex: 0 0 rem(120);
+                width: rem(120);
+                height: rem(120);
+            }
+        }
+    }
+    &__breadcrumbs {
+        min-height: rem(14);
+        margin-bottom: rem(40);
+        @media(max-width: $mobileSmall) {
+            margin-bottom: rem(24);
+        }
+    }
+    &__head {
+        max-width: rem(488);
+        margin-bottom: rem(32);
+        h1 {
+            @extend %Manrope88-40-medium;
+            margin-bottom: rem(40);
+            @media(max-width: $mobileSmall) {
+                margin-bottom: rem(24);
+            }
+        }
+        span {
+            @extend %Manrope40-24-medium;
+            display: block;
+            margin-bottom: rem(16);
+            color: $primary1;
+            @media(max-width: $mobileSmall) {
+                margin-bottom: rem(8);
+            }
+        }
+        p {
+            @extend %Montserrat16-14-medium;
+        }
+    }
+    &__link {
+        height: 100%;
+        display: flex;
+        justify-content: flex-end;
+    }
+}
+
+// * catalog-block
+.catalog-block {
+    display: flex;
+    flex-direction: column;
+    &__content {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: rem(32);
+        margin-top: rem(80);
+        @media(max-width: $tablet) {
+            margin-top: rem(40);
+            grid-template-columns: 1fr;
+        }
+    }
+    .primary-btn {
+        @media(min-width: $tablet) {
+            margin: rem(100) auto 0 auto;
+        }
+    }
+}
+
+// * product-card
+.product-card {
+    &__content {
+        position: relative;
+    }
+    &__favorite {
+        position: absolute;
+        top: rem(29);
+        right: rem(28);
+        z-index: 2;
+        @media(max-width: $mobileSmall) {
+            top: rem(21);
+            right: rem(20);
+        }
+    }
+    &__image-ibg {
+        height: rem(389);
+        img {
+            user-select: none;
+        }
+        @media(max-width: $mobileSmall) {
+            height: rem(195);
+        }
+    }
+    &__body {
+        position: relative;
+        background: $white;
+        padding: rem(16);
+        border: 1px solid $woodsmoke;
+        z-index: 2;
+        @media(min-width: $mobileSmall) {
+            width: 82%;
+            padding: rem(24);
+            margin-top: rem(-146);
+        }
+    }
+    &__title {
+        @extend %Montserrat24-18-medium;
+        display: block;
+        color: $bazaar;
+        margin-bottom: em(8);
+    }
+    &__description {
+        @extend %Montserrat14-medium;
+        line-height: math.div(21, 14);
+        margin-bottom: em(16);
+        max-height: rem(64);
+        overflow: hidden;
+    }
+    &__price {
+        @extend %Montserrat18-regular;
+        display: block;
+        margin-bottom: em(8);
+    }
+    &__actions {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__buy-link {
+        @extend %Montserrat14-ligth;
+        line-height: math.div(24, 14);
+        margin-right: rem(24);
+        color: $bazaar;
+        text-decoration: underline!important;
+        transition: color $defaultTransition;
+
+        &:hover {
+            color: $woodsmoke;
+        }
+    }
+    &__card-link {
+        @extend %flex-center;
+        flex: 0 0 rem(48);
+        width: rem(48);
+        height: rem(48);
+        border: 1px solid $woodsmoke;
+        border-radius: 100%;
+        transition: background $defaultTransition;
+
+        svg {
+            width: rem(20);
+            height: rem(20);
+
+            path {
+                transition: fill $defaultTransition;
+                fill: $woodsmoke;
+            }
+        }
+        @media(max-width: $mobileSmall) {
+            flex: 0 0 rem(40);
+            width: rem(40);
+            height: rem(40);
+        }
+        &:hover {
+            background: $woodsmoke;
+            svg {
+                path {
+                    fill: $white;
+                }
+            }
+        }
+    }
+}
+
+// * geometry-media
+.geometry-media {
+    align-self: center;
+
+    @media(min-width: $tablet) {
+        align-self: end;
+    }
+    &__content {
+        position: relative;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: rem(32);
+    }
+    &__svg {
+        position: absolute;
+        top: -10%;
+        left: -30%;
+        max-width: none;
+        @media(max-width: $tablet) {
+            display: none;
+        }
+    }
+    &__item {
+        overflow: hidden;
+        width: rem(384);
+        @media(max-width: $mobileSmall) {
+            width: rem(280);
+        }
+
+        &_type-1 {
+            height: rem(384);
+            border-radius: 100%;
+            @media(max-width: $mobileSmall) {
+                height: rem(280);
+            }
+        }
+        &_type-2 {
+            height: rem(266);
+            border-radius: 61% 0% 52% 9% / 72% 26% 74% 0%;
+            @media(max-width: $mobileSmall) {
+                height: rem(172);
+            }
+        }
+        &_type-3 {
+            height: rem(384);
+            border-radius: 0% 51% 50% 50% / 0% 51% 49% 49%;
+            @media(max-width: $mobileSmall) {
+                height: rem(280);
+            }
+        }
+    }
+    &__image-ibg {
+        padding-bottom: 100%;
     }
 }
