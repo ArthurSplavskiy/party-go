@@ -7,7 +7,7 @@
 // Подключаем слайдер Swiper из node_modules
 // При необходимости подключаем дополнительные модули слайдера, указывая их в {} через запятую
 // Пример: { Navigation, Autoplay }
-import Swiper, { Navigation, Pagination, Lazy } from 'swiper';
+//import Swiper, { Navigation, Pagination, Lazy } from 'swiper';
 /*
 Основниые модули слайдера:
 Navigation, Pagination, Autoplay, 
@@ -44,49 +44,40 @@ function initSliders() {
 	// при необходимости отключить
 	bildSliders();
 
-	if (document.querySelector('#employee-page__slider-1')) {
-		new Swiper('#employee-page__slider-1', {
-			modules: [Navigation, Lazy],
-			lazy: {
-				loadPrevNext: true,
-				loadPrevNextAmount: 4
-			},
+	if (document.querySelector('[data-slider-id="1"]')) {
+		new Swiper('[data-slider-id="1"]', {
 			observer: true,
 			observeParents: true,
 			slidesPerView: 3,
-			spaceBetween: 40,
+			resizeObserver: true,
 			autoHeight: true,
 			speed: 800,
 			grabCursor: true,
-			// Arrows
 			navigation: {
-				nextEl: '.employee-page__slider-1__next',
-				prevEl: '.employee-page__slider-1__prev',
+				nextEl: '[data-slider-btn="1, next"]',
+				prevEl: '[data-slider-btn="1, prev"]',
+				disabledClass: '_disabled'
 			},
 			breakpoints: {
-				320: {
-					slidesPerView: 1.1,
-					spaceBetween: 16,
+				0: {
+					slidesPerView: 1,
+					spaceBetween: 20,
 				},
 				480: {
 					slidesPerView: 1.5,
-					spaceBetween: 20,
+					spaceBetween: 24,
 				},
 				768: {
 					slidesPerView: 2.5,
-					spaceBetween: 20,
+					spaceBetween: 24,
 				},
 				992: {
 					slidesPerView: 2.8,
-					spaceBetween: 40,	
+					spaceBetween: 94	
 				},
-				1134: {
+				1256: {
 					slidesPerView: 3,
-					spaceBetween: 40,
-				},
-				1920: {
-					slidesPerView: 4,
-					spaceBetween: 40,
+					spaceBetween: 168
 				}
 			}
 		})

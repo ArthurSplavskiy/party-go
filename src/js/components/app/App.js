@@ -73,7 +73,7 @@ export default class App {
             * Header Spollers
         */
         const $targetHeaderSpoller = isTarget(targetElement, '.header [data-spoller]')
-        if(!$targetHeaderSpoller) {
+        if (!$targetHeaderSpoller) {
             removeClasses('.header [data-spoller]', '_spoller-active')
             _slideUp('.header [data-spoller] + *', 500);
         }
@@ -82,7 +82,7 @@ export default class App {
             * Menu Spollers
         */
         const $targetMenuSpoller = isTarget(targetElement, '.page-menu [data-spoller]')
-        if(!$targetMenuSpoller) {
+        if (!$targetMenuSpoller) {
             removeClasses('.page-menu [data-spoller]', '_spoller-active')
             _slideUp('.page-menu [data-spoller] + *', 500);
         }
@@ -91,7 +91,7 @@ export default class App {
             * Intro Animation
         */
         const $introItem = isTarget(targetElement, '[data-intro-item]')
-        if($introItem) {
+        if ($introItem) {
             const introTransition = 1400
             const $introComponent = $introItem.closest('[data-intro]')
             const $introItems = $introComponent.querySelectorAll('[data-intro-item]')
@@ -114,8 +114,23 @@ export default class App {
             * Favorite toggle
         */
         const $favoriteIcon = isTarget(targetElement, '[data-favorite]')
-        if($favoriteIcon) {
+        if ($favoriteIcon) {
             $favoriteIcon.classList.toggle('_active')
+        }
+
+        /*  
+            * Video play
+        */
+        const $videoComponent = isTarget(targetElement, '[data-video]')
+        if ($videoComponent) {
+            const $videoElement = $videoComponent.querySelector('[data-src]')
+            const $videoCover = $videoComponent.querySelector('[data-video-cover]')
+
+            if ($videoElement.paused && !$videoElement.hasAttribute('src')) {
+                $videoCover.hidden = true
+                $videoElement.src = $videoElement.dataset.src
+                $videoElement.play()
+            }
         }
     }
    

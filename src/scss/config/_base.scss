@@ -151,6 +151,16 @@ body {
 	}
 }
 
+.btn-centered {
+	display: flex;
+    flex-direction: column;
+	.primary-btn {
+        @media(min-width: $tablet) {
+            margin: rem(100) auto 0 auto;
+        }
+    }
+}
+
 .s-mb {
 	margin-bottom: rem(168);
 

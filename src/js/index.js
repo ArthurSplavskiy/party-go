@@ -5,7 +5,7 @@ import * as scroll from "./core/scroll/scroll.js"
 
 import './core/utils/inline-svg.js'
 import './core/scroll/lazyload.js'
-//import "./core/utils/sliders.js"
+import "./core/utils/sliders.js"
 //import "./core/utils/popups.js"
 //import "./core/utils/tippy.js"
 //import "./core/forms/select.js"

@@ -295,6 +295,18 @@
 	}
 }
 
+// * 70
+%Manrope72-40-medium {
+	font-family: $manropeFontFamily;
+	font-size: rem(72);
+	line-height: 100%;
+	font-weight: 500;
+
+	@media(max-width: $mobileSmall) {
+		font-size: rem(40);
+	}
+}
+
 // * 88
 %Manrope88-40-medium {
 	font-family: $manropeFontFamily;
