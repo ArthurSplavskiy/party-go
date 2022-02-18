@@ -43,19 +43,6 @@ body {
 	// @media(max-width: $mobileSmall) {
 	// 	margin-top: rem(76);
 	// }
-
-	&__image-ibg{
-		position: fixed!important;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		height: 100vh;
-		z-index: z('page-bg');
-		img {
-			position: fixed;
-		}
-	}
 }
 
 // * Page container

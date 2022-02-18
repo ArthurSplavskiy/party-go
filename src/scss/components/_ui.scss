@@ -1,3 +1,72 @@
+// * page-bg 
+.page-bg {
+    position: fixed!important;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    z-index: z('page-bg');
+
+    &__image-ibg{
+		width: 100%;
+		height: 100%;
+		
+		img {
+			position: fixed;
+		}
+	}
+
+    // modeficators
+    &_boys {
+        background: $shark;
+
+        img {
+            position: absolute;
+            
+
+            &:nth-child(1) {
+                top: 20%;
+                right: 20%;
+                animation: blink 6s ease infinite;
+            }
+            &:nth-child(2) {
+                bottom: -2%;
+                left: -2%;
+                animation: blink 6s ease infinite 0.5s;
+            }
+            &:nth-child(3) {
+                top: 5%;
+                left: 5%;
+                animation: blink 4s ease infinite;
+            }
+            &:nth-child(4) {
+                bottom: 2%;
+                right: -5%;
+                animation: blink 4s ease infinite 1.2s;
+            }
+
+            @keyframes blink {
+                0% {
+                    opacity: 0.2;
+                }
+                25% {
+                    opacity: 0.7;
+                }
+                50% {
+                    opacity: 1;
+                }
+                75% {
+                    opacity: 0.7;
+                }
+                100% {
+                    opacity: 0.2;
+                }
+            }
+        }
+    }
+}
+
 // * social-list 
 .social {
     &__list {
@@ -45,6 +114,7 @@
         background: $primary1;
     }
 
+    // modeficators
     &_green {
         border-color: $primary3;
         &:hover {
@@ -64,6 +134,17 @@
         &:hover {
             color: $white;
             background: $black;
+        }
+    }
+    &_blue {
+        border-color: $ghost;
+        color: $white;
+        &:hover {
+            background: $ghost;
+        }
+        &:active {
+            border-color: $white;
+            background: $white;
         }
     }
     &_section {
@@ -104,8 +185,10 @@
             left: 0;
             width: rem(32);
             height: rem(32);
-            background: transparent url('../img/interface/arrow-type.svg') no-repeat;
+            background-color: transparent;
+            background-repeat: no-repeat;
             background-size: cover;
+            background-image: url('../img/interface/arrow-type.svg');
 
             @media(max-width: $mobileSmall) {
                 width: rem(24);
@@ -145,6 +228,28 @@
             color: $grey;
         }
     }
+
+    // modificators
+    &_boys {
+        li:before {
+            background-image: url('../img/interface/octagon.svg');
+        }
+        .service-list__composition {
+            p {
+                color: $primary2;
+            }
+        }
+    }
+    &_boys {
+        li:before {
+            background-image: url('../img/interface/arrow-type.svg');
+        }
+        .service-list__composition {
+            p {
+                color: $primary3;
+            }
+        }
+    }
 }
 
 // * page-section 
@@ -154,7 +259,7 @@
         margin-top: rem(96);
     }
 
-    &_bg {
+    &[data-bg] {
         padding: rem(80) 0;
         overflow: hidden;
         position: relative;
@@ -171,43 +276,43 @@
             padding: rem(40) 0;
         }
     }
-    &__bg-elements {
-        @extend %cover;
-        .type-circle {
-            border-radius: 100%;
-            filter: blur($blurValue2);
-            position: absolute;
+    // &__bg-elements {
+    //     @extend %cover;
+    //     .type-circle {
+    //         border-radius: 100%;
+    //         filter: blur($blurValue2);
+    //         position: absolute;
 
-            &:nth-child(1) {
-                background: $primary1;
-                width: rem(432);
-                height: rem(432);
-                left: 0;
-                top: rem(-62);
-            }
-            &:nth-child(2) {
-                background: $primary2;
-                width: rem(510);
-                height: rem(510);
-                left: rem(-40);
-                bottom: rem(-320);
-            }
-            &:nth-child(3) {
-                background: $primary1;
-                width: rem(510);
-                height: rem(510);
-                right: rem(-110);
-                bottom: rem(66);
-            }
-            &:nth-child(4) {
-                background: $bazaar;
-                width: rem(296);
-                height: rem(296);
-                bottom: rem(-155);
-                right: rem(-110);
-            }
-        }
-    }
+    //         &:nth-child(1) {
+    //             background: $primary1;
+    //             width: rem(432);
+    //             height: rem(432);
+    //             left: 0;
+    //             top: rem(-62);
+    //         }
+    //         &:nth-child(2) {
+    //             background: $primary2;
+    //             width: rem(510);
+    //             height: rem(510);
+    //             left: rem(-40);
+    //             bottom: rem(-320);
+    //         }
+    //         &:nth-child(3) {
+    //             background: $primary1;
+    //             width: rem(510);
+    //             height: rem(510);
+    //             right: rem(-110);
+    //             bottom: rem(66);
+    //         }
+    //         &:nth-child(4) {
+    //             background: $bazaar;
+    //             width: rem(296);
+    //             height: rem(296);
+    //             bottom: rem(-155);
+    //             right: rem(-110);
+    //         }
+    //     }
+    // }
 
     &__content {
         display: grid;
@@ -262,6 +367,26 @@
             margin-top: rem(40);
             display: flex;
             margin-left: auto;
+        }
+    }
+
+    // modeficators
+    &_boys {
+        .page-section__head {
+            color: $white;
+
+            span {
+                color: $ghost;
+            }
+        }
+    }
+    &_corp {
+        .page-section__head {
+            color: $woodsmoke;
+
+            span {
+                color: $bay-leaf;
+            }
         }
     }
 }
@@ -377,6 +502,19 @@
 
         }
     }
+
+    // modificators
+    &_boys {
+        .spoller-item__head._spoller-active .spoller-item__close {
+            border-color: $woodsmoke;
+        }
+        .spoller-item__close {
+            border-color: $white;
+            svg path {
+                fill: $white;
+            }
+        }
+    }
 }
 
 // * anchor-top 
@@ -426,6 +564,7 @@
         }
     }
 
+    // modeficators
     &_bottom {
         .page-anchor__arrow {
             transform: translate(-50%, -50%) rotate(180deg);
@@ -441,6 +580,33 @@
         &:hover {
             .page-anchor__arrow {
                 transform: scaleY(1.2) translate(-50%, -40%) rotate(180deg);
+            }
+        }
+    }
+    &_boys {
+        &:hover {
+            .page-anchor__ellipse:not(:first-child) {
+                transform: rotate(25deg);
+            } 
+        }
+        .page-anchor__arrow, .page-anchor__ellipse {
+            path {
+                stroke: $white;
+            }
+        }
+    }
+    &_corp {
+        &:hover {
+            .page-anchor__ellipse:not(:first-child) {
+                transform: rotate(22deg);
+            } 
+        }
+        .page-anchor__arrow {
+            height: rem(44);
+        }
+        .page-anchor__arrow, .page-anchor__ellipse {
+            path {
+                stroke: $primary3;
             }
         }
     }
@@ -531,6 +697,22 @@
         display: flex;
         justify-content: flex-end;
     }
+
+    // modeficators
+    &_boys {
+        .first-screen__head {
+            span {
+                color: $primary2;
+            }
+        }
+    }
+    &_corp {
+        .first-screen__head {
+            span {
+                color: $primary3;
+            }
+        }
+    }
 }
 
 // * catalog-block
@@ -549,6 +731,14 @@
 
 // * product-card
 .product-card {
+    &:hover {
+        .product-card__image-ibg {
+            background: $primary1;
+            img {
+                border-radius: 11% 52% 0% 53% / 0% 80% 8% 100%;
+            }
+        }
+    }
     &__content {
         position: relative;
     }
@@ -563,8 +753,11 @@
         }
     }
     &__image-ibg {
+        display: block;
         height: rem(389);
+        transition: all $defaultTransition;
         img {
+            transition: all $defaultTransition;
             user-select: none;
         }
         @media(max-width: $mobileSmall) {
@@ -577,6 +770,7 @@
         padding: rem(16);
         border: 1px solid $woodsmoke;
         z-index: 2;
+        color: $woodsmoke;
         @media(min-width: $mobileSmall) {
             width: 82%;
             padding: rem(24);
@@ -650,6 +844,29 @@
             }
         }
     }
+
+    // modeficators
+    &_boys {
+        &:hover {
+            .product-card__image-ibg {
+                background: $primary2;
+            }
+        }
+        .product-card__title, .product-card__buy-link {
+            color: $santas;
+        }
+    }
+    // modeficators
+    &_corp {
+        &:hover {
+            .product-card__image-ibg {
+                background: $bay-leaf;
+            }
+        }
+        .product-card__title, .product-card__buy-link {
+            color: $bay-leaf;
+        }
+    }
 }
 
 // * geometry-media
@@ -681,6 +898,7 @@
             width: rem(280);
         }
 
+        // modeficators
         &_type-1 {
             height: rem(384);
             border-radius: 100%;
@@ -698,6 +916,37 @@
         &_type-3 {
             height: rem(384);
             border-radius: 0% 51% 50% 50% / 0% 51% 49% 49%;
+            @media(max-width: $mobileSmall) {
+                height: rem(280);
+            }
+        }
+        &_type-4 {
+            height: rem(384);
+            clip-path: polygon(51% 0, 86% 16%, 100% 50%, 86% 85%, 50% 100%, 16% 85%, 0 50%, 14% 16%);
+            @media(max-width: $mobileSmall) {
+                height: rem(280);
+            }
+        }
+        &_type-5 {
+            height: rem(326);
+            clip-path: polygon(0 25%, 52% 0, 100% 30%, 100% 75%, 35% 100%, 0 77%);
+
+            @media(max-width: $mobileSmall) {
+                height: rem(172);
+            }
+        }
+        &_type-6 {
+            height: rem(384);
+            clip-path: polygon(
+                50% 0, 
+                60% 15%, 75% 7%, 76% 24%, 93% 25%, 86% 41%,
+                100% 50%,
+                86% 59%, 93% 75%, 76% 74%, 75% 93%, 60% 85%,
+                50% 100%,
+                40% 85%, 25% 93%, 24% 74%, 7% 75%, 14% 59%,
+                0 50%,
+                14% 41%, 7% 25%, 24% 24%, 25% 7%, 40% 15%
+            );
             @media(max-width: $mobileSmall) {
                 height: rem(280);
             }
@@ -820,6 +1069,37 @@
             }
         }
     }
+
+    &_boys {
+        .page-video__play {
+            border-left-color: $santas;
+        }
+        .page-video__description {
+            span {
+                &:first-child {
+                    color: $white;
+                }
+                &:last-child {
+                    color: $santas;
+                }
+            }
+        }
+    }
+    &_corp {
+        .page-video__play {
+            border-left-color: $bay-leaf;
+        }
+        .page-video__description {
+            span {
+                &:first-child {
+                    color: $bay-leaf;
+                }
+                &:last-child {
+                    color: $woodsmoke;
+                }
+            }
+        }
+    }
 }
 
 // * offer-info (ellipse)
@@ -845,7 +1125,7 @@
             margin-bottom: rem(40);
         }
 
-        &__top-svg {
+        .offer-info__top-svg {
             width: rem(32);
             height: rem(32);
             @media(max-width: $mobileSmall) {
@@ -868,13 +1148,15 @@
     }
 
     &__content {
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        gap: rem(24);
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: rem(32);
+        @media(max-width: $tablet) {
+            grid-template-columns: 1fr 1fr;
+            gap: rem(74);
+        }
         @media(max-width: $mobile) {
-            flex-direction: column;
-            align-items: center;
+            grid-template-columns: 1fr;
         }
     }
     &__item {
@@ -884,7 +1166,7 @@
 
         &-wrap {
             @extend %flex-center;
-            width: rem(343);
+            width: 100%;
             height: rem(248);
             position: relative;
             @media(max-width: $mobileSmall) {
@@ -899,18 +1181,67 @@
     &__svg {
         @extend %absolute-center;
         width: 100%;
+        max-width: rem(328);
 
         & > * {
             width: 100%;
         }
     }
     &__text {
+        @extend %Montserrat16-14-medium;
         position: relative;
         z-index: 2;
-        @extend %Montserrat16-14-medium;
-        max-width: rem(280);
         text-align: center;
-        margin: auto;
+        margin: auto 0;
+        @media(max-width: $mobile) {
+            max-width: rem(280);
+        }
+    }
+
+    // modificators
+    &_boys {
+        .offer-info__top-item {
+            border: none;
+        }
+        .offer-info__top-item-border {
+            @extend %cover;
+            width: 100%!important;
+        }
+        .offer-info__top-item + .offer-info__item-wrap {
+            border-top: 1px solid $medium-grey;
+            border-bottom: 1px solid $medium-grey;
+        }
+        .offer-info__svg {
+            max-width: rem(258);
+
+        }
+        .offer-info__top-svg path {
+            fill: $white;
+        }
+    }
+    &_corp {
+        .offer-info__top-item {
+            border: none;
+        }
+        .offer-info__top-item-border {
+            @extend %cover;
+            width: 100%!important;
+
+            svg path {
+                stroke: $primary3
+            }
+        }
+        .offer-info__top-item + .offer-info__item-wrap {
+            border-top: 1px solid $primary3;
+            border-bottom: 1px solid $primary3;
+        }
+        .offer-info__svg {
+            max-width: rem(258);
+
+        }
+        .offer-info__top-svg path {
+            fill: $woodsmoke;
+        }
     }
 }
 
@@ -1108,6 +1439,38 @@
                 @media(max-width: $tablet) {
                     display: none;
                 }
+            }
+        }
+    }
+
+    // modificators
+    &_boys {
+        .swiper-slide-next {
+            &:after, &:before {
+                background: $ghost;
+            }
+        }
+        .page-slider__navigation {
+            .ellipse path {
+                stroke: $white;
+            }
+            .arrow path {
+                fill: $white;
+            }
+            &:hover {
+                .ellipse path {
+                    fill: $white;
+                }
+                .arrow path {
+                    fill: $woodsmoke;
+                }
+            }
+        }
+    }
+    &_corp {
+        .swiper-slide-next {
+            &:after, &:before {
+                background: $primary2;
             }
         }
     }
