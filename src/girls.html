@@ -6,11 +6,8 @@
 	<body>
 		<div class="page-bg">
 			<div class="page-bg__image-ibg">
-				<img src="img/girl-bg.png" alt="Party Go">
+				<img src="img/girls/girl-bg.png" alt="Party Go">
 			</div>
-		</div>
-		<div class="page__image-ibg">
-			<img src="img/girls/girl-bg.png" alt="Party Go">
 		</div>
 		<div class="wrapper" id="page-top">
 			@@include('html/_header.htm',{})
@@ -31,14 +28,15 @@
 								</div>
 								<!-- <a href="#" class="primary-btn">ПЕРЕГЛЯНУТИ</a> -->
 								@@include('html/_page-anchor.htm',{
-									"direction": "bottom"
+									"direction": "bottom",
+									"anchorID": "anchor-next"
 								})
 							</div>
                         </div>
                     </div>
                 </div>
 
-				<section class="page-section">
+				<section id="anchor-next" class="page-section">
 					<div class="_container">
 						<div class="page-section__content">
 							<div class="page-section__head">
@@ -329,11 +327,11 @@
 
 								<div class="offer-info__item">
 
-									<div class="offer-info__top-item">
-										<div class="offer-info__blur-bg">
+									<div class="service-icon offer-info__top-item">
+										<div class="service-icon__blur">
 											<img src="img/interface/blur-circles.svg" alt="Party Go">
 										</div>
-										<img class="offer-info__top-svg" src="img/interface/timer.svg" alt="Party Go">
+										<img class="service-icon__svg" src="img/interface/timer.svg" alt="Party Go">
 									</div>
 
 									<div class="offer-info__item-wrap">
@@ -348,11 +346,11 @@
 
 								<div class="offer-info__item">
 
-									<div class="offer-info__top-item">
-										<div class="offer-info__blur-bg">
+									<div class="service-icon offer-info__top-item">
+										<div class="service-icon__blur">
 											<img src="img/interface/blur-circles.svg" alt="Party Go">
 										</div>
-										<img class="offer-info__top-svg" src="img/interface/coins.svg" alt="Party Go">
+										<img class="service-icon__svg" src="img/interface/coins.svg" alt="Party Go">
 									</div>
 
 									<div class="offer-info__item-wrap">
@@ -367,9 +365,9 @@
 
 								<div class="offer-info__item">
 
-									<div class="offer-info__top-item">
-										<div class="offer-info__blur-bg">
-											<img class="offer-info__top-svg" src="img/interface/blur-circles.svg" alt="Party Go">
+									<div class="service-icon offer-info__top-item">
+										<div class="service-icon__blur">
+											<img class="service-icon__svg" src="img/interface/blur-circles.svg" alt="Party Go">
 										</div>
 										<img src="img/interface/diamond.svg" alt="Party Go">
 									</div>
@@ -624,7 +622,8 @@
 				</div>
 
 				@@include('html/_page-anchor.htm',{
-                    "direction": "top"
+                    "direction": "top",
+					"anchorID": "page-top"
                 })
 
 			</main>

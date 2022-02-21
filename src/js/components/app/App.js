@@ -97,6 +97,25 @@ export default class App {
             const $introItems = $introComponent.querySelectorAll('[data-intro-item]')
 
             if(!$introComponent.classList.contains('_hold')) {
+
+                // * TOGGLE ACTIVE STATE
+                // if($introItem.classList.contains('_active')) {
+                //     $introItem.classList.remove('_active')
+                //     $introItems.forEach(item => {
+                //         if(!item.classList.contains('_active')) {
+                //             item.classList.remove('_reduced')
+                //         }
+                //     })
+                // } else {
+                //     $introItems.forEach(item => item.classList.remove('_active', '_reduced'))
+                //     $introItem.classList.add('_active')
+                //     $introItems.forEach(item => {
+                //         if(!item.classList.contains('_active')) {
+                //             item.classList.add('_reduced')
+                //         }
+                //     })
+                // }
+
                 $introItems.forEach(item => item.classList.remove('_active', '_reduced'))
                 $introItem.classList.add('_active')
                 $introItems.forEach(item => {
@@ -104,6 +123,7 @@ export default class App {
                         item.classList.add('_reduced')
                     }
                 })
+                
                 $introComponent.classList.add('_hold')
             }
 

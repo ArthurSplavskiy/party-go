@@ -228,6 +228,7 @@
             transition: all $defaultTransition;
             padding-bottom: rem(8);
             color: $white;
+            -webkit-text-fill-color: $white;
 
             & + .form__error {
                 position: absolute;
@@ -237,6 +238,7 @@
             &._error {
                 border-color: $red;
                 color: $red;
+                -webkit-text-fill-color: $red;
                 @include placeholder-content {
                     color:  $red;
                 }

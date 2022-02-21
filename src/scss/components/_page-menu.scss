@@ -1,20 +1,4 @@
 .page-menu {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
-    background: $white;
-    z-index: z('page-menu');
-    transform: translate3d(-100%, 0, 0);
-    transition: transform $defaultTransition;
-    overflow: hidden;
-    &.menu-open {
-        transform: translate3d(0, 0, 0);
-        overflow: hidden auto;
-    }
 
     @media(min-width: $tablet) {
         display: none;
@@ -22,15 +6,6 @@
 
     &__content {
         padding-bottom: rem(32);
-    }
-
-    &__head {
-        @extend %Montserrat14-medium;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        border-bottom: 1px solid $primary2;
-        padding: em(12) 0;
     }
 
     &__actions {
@@ -174,36 +149,6 @@
             @extend %Montserrat14-ligth;
             &:not(:last-child) {
                 margin-bottom: rem(16);
-            }
-        }
-    }
-
-    .animate-circles {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        overflow: hidden;
-        z-index: -1;
-        div {
-            position: absolute;
-            width: rem(224);
-            height: rem(224);
-            background: coral;
-            border-radius: 100%;
-
-            &:first-child {
-                top: rem(70);
-                left: rem(-114);
-                background: $primary2;
-                filter: blur($blurValue)
-            }
-            &:last-child {
-                bottom: rem(145);
-                right: rem(-75);
-                background: $primary1;
-                filter: blur($blurValue)
             }
         }
     }

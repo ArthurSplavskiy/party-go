@@ -28,14 +28,15 @@
 								</div>
 								<!-- <a href="#" class="primary-btn">ПЕРЕГЛЯНУТИ</a> -->
 								@@include('html/_page-anchor__corp.htm',{
-									"direction": "bottom"
+									"direction": "bottom",
+									"anchorID": "anchor-next"
 								})
 							</div>
                         </div>
                     </div>
                 </div>
 
-				<section class="page-section page-section_corp">
+				<section id="anchor-next" class="page-section page-section_corp">
 					<div class="_container">
 						<div class="page-section__content">
 							<div class="page-section__head">
@@ -170,7 +171,9 @@
 					</div>
 				</section>
 
-				<section class="page-section page-section_corp">
+				<section class="page-section page-section_corp page-section_decor">
+					<img class="decor-1" data-src="img/interface/corp-decoration.svg" data-lazy alt="Party Go">
+					<img class="decor-2" data-src="img/interface/corp-decoration-2.svg" data-lazy alt="Party Go">
 					<div class="_container">
 						<div class="page-section__content">
 							<div class="page-section__head">
@@ -195,7 +198,7 @@
 										</div>
 										<div class="geometry-media__item geometry-media__item_type-8">
 											<div class="geometry-media__image-ibg">
-												<img data-src="img/corp/corp-01.jpeg" data-lazy alt="Party Go">
+												<img data-src="img/corp/corp-03.jpeg" data-lazy alt="Party Go">
 											</div>
 										</div>
 									</div>
@@ -325,11 +328,11 @@
 
 								<div class="offer-info__item">
 
-									<div class="offer-info__top-item">
+									<div class="service-icon offer-info__top-item">
 										<div class="offer-info__top-item-border">
 											<img src="img/interface/polygon-icon-2.svg" alt="Party Go">
 										</div>
-										<img class="offer-info__top-svg" data-src="img/interface/timer.svg" data-inline-svg alt="Party Go">
+										<img class="service-icon__svg" data-src="img/interface/timer.svg" data-inline-svg alt="Party Go">
 									</div>
 
 									<div class="offer-info__item-wrap">
@@ -341,11 +344,11 @@
 
 								<div class="offer-info__item">
 
-									<div class="offer-info__top-item">
+									<div class="service-icon offer-info__top-item">
 										<div class="offer-info__top-item-border">
 											<img src="img/interface/polygon-icon-2.svg" alt="Party Go">
 										</div>
-										<img class="offer-info__top-svg" data-src="img/interface/coins.svg" data-inline-svg alt="Party Go">
+										<img class="service-icon__svg" data-src="img/interface/coins.svg" data-inline-svg alt="Party Go">
 									</div>
 
 									<div class="offer-info__item-wrap">
@@ -357,11 +360,11 @@
 
 								<div class="offer-info__item">
 
-									<div class="offer-info__top-item">
+									<div class="service-icon offer-info__top-item">
 										<div class="offer-info__top-item-border">
 											<img src="img/interface/polygon-icon-2.svg" alt="Party Go">
 										</div>
-										<img class="offer-info__top-svg" data-src="img/interface/diamond.svg" data-inline-svg alt="Party Go">
+										<img class="service-icon__svg" data-src="img/interface/diamond.svg" data-inline-svg alt="Party Go">
 									</div>
 
 									<div class="offer-info__item-wrap">
@@ -391,7 +394,7 @@
 							<div class="details-block__content">
 								<div class="details-block__column">
 
-									<ul class="service-list service-list_corp">
+									<ul class="service-list">
 										<li data-scroll="0.5">
 											<div class="service-list__composition">
 												<span>Натхнення</span>
@@ -605,7 +608,8 @@
 				</div>
 
 				@@include('html/_page-anchor__corp.htm',{
-					"direction": "top"
+					"direction": "top",
+					"anchorID": "page-top"
 				})
 
 			</main>

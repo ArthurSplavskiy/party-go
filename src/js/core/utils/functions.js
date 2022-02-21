@@ -541,8 +541,8 @@ export function menuOpen() {
 		iconMenu.addEventListener('click', function (e) {
 			if (bodyLockStatus) {
 				bodyLockToggle();
-				document.documentElement.classList.toggle('menu-open');
-				headerMenu.classList.toggle('menu-open');
+				document.documentElement.classList.toggle('_open');
+				headerMenu.classList.toggle('_open');
 			}
 		});
 	};
@@ -555,8 +555,8 @@ export function menuClose(target) {
 		target.addEventListener('click', function (e) {
 			if (bodyLockStatus) {
 				bodyLockToggle();
-				document.documentElement.classList.toggle('menu-open');
-				headerMenu.classList.toggle('menu-open');
+				document.documentElement.classList.toggle('_open');
+				headerMenu.classList.toggle('_open');
 			}
 		});
 	}

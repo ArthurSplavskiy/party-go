@@ -111,6 +111,12 @@
 	right: 0;
 	bottom: 0;
 }
+%text-inherit {
+	font-family: inherit;
+	font-size: inherit;
+	line-height: inherit;
+	font-weight: inherit;
+}
 
 // * * * Fonts
 
@@ -211,6 +217,17 @@
 }
 
 // * 18
+%Montserrat18-16-medium {
+	font-family: $defaultFontFamily;
+	font-size: rem(18);
+	line-height: math.div(28, 18);
+	font-weight: 500;
+
+	@media(max-width: $mobileSmall) {
+		font-size: rem(16);
+		line-height: math.div(24, 16);
+	}
+}
 %Montserrat18-regular {
 	font-family: $defaultFontFamily;
 	font-size: rem(18);

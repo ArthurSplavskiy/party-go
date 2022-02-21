@@ -27,16 +27,16 @@
 									<span>Ми зробимо твій день незабутнім</span>
 									<p>Ми з радісттю та без зайвих клопотів допоможемо організувати незабутнє свято. Ти зможеш забути про переживання та хлопоти замовивши наші послуги. В житті кожного є особливі моменти і події які назавжди хочеться закарбувати у своїй пам’яті.</p>
 								</div>
-								<!-- <a href="#" class="primary-btn">ПЕРЕГЛЯНУТИ</a> -->
 								@@include('html/_page-anchor__boys.htm',{
-									"direction": "bottom"
+									"direction": "bottom",
+									"anchorID": "anchor-next"
 								})
 							</div>
                         </div>
                     </div>
                 </div>
 
-				<section class="page-section page-section_boys">
+				<section id="anchor-next" class="page-section page-section_boys">
 					<div class="_container">
 						<div class="page-section__content">
 							<div class="page-section__head">
@@ -326,11 +326,11 @@
 
 								<div class="offer-info__item">
 
-									<div class="offer-info__top-item">
+									<div class="service-icon offer-info__top-item">
 										<div class="offer-info__top-item-border">
 											<img src="img/interface/octagon-icon.svg" alt="Party Go">
 										</div>
-										<img class="offer-info__top-svg" data-src="img/interface/timer.svg" data-inline-svg alt="Party Go">
+										<img class="service-icon__svg" data-src="img/interface/timer.svg" data-inline-svg alt="Party Go">
 									</div>
 
 									<div class="offer-info__item-wrap">
@@ -342,11 +342,11 @@
 
 								<div class="offer-info__item">
 
-									<div class="offer-info__top-item">
+									<div class="service-icon offer-info__top-item">
 										<div class="offer-info__top-item-border">
 											<img src="img/interface/octagon-icon.svg" alt="Party Go">
 										</div>
-										<img class="offer-info__top-svg" data-src="img/interface/coins.svg" data-inline-svg alt="Party Go">
+										<img class="service-icon__svg" data-src="img/interface/coins.svg" data-inline-svg alt="Party Go">
 									</div>
 
 									<div class="offer-info__item-wrap">
@@ -358,11 +358,11 @@
 
 								<div class="offer-info__item">
 
-									<div class="offer-info__top-item">
+									<div class="service-icon offer-info__top-item">
 										<div class="offer-info__top-item-border">
 											<img src="img/interface/octagon-icon.svg" alt="Party Go">
 										</div>
-										<img class="offer-info__top-svg" data-src="img/interface/diamond.svg" data-inline-svg alt="Party Go">
+										<img class="service-icon__svg" data-src="img/interface/diamond.svg" data-inline-svg alt="Party Go">
 									</div>
 
 									<div class="offer-info__item-wrap">
@@ -606,7 +606,8 @@
 				</div>
 
 				@@include('html/_page-anchor__boys.htm',{
-					"direction": "top"
+					"direction": "top",
+					"anchorID": "page-top"
 				})
 
 			</main>

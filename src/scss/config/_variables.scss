@@ -57,6 +57,9 @@ $snuff: #E0E2F1;
 $disabled: #E8DEDC;
 $red: #EB5757;
 $bay-leaf:#88AF98;
+$primary-hover: #C3A9A9;
+$silver:#E9E9E9;
+$silver-light:#F8F8F8;
 
 // $cinderella:#FEE1DE;
 // $peach: #FFD3CE;
@@ -73,6 +76,7 @@ $defaultTransition: 0.3s ease;
 // * z-indexes
 $z-indexes: (
   'page-menu',
+  'mobile-filter',
   'header',
   'wrapper',
   'page-bg'
