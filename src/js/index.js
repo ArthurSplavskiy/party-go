@@ -13,6 +13,7 @@ import "./core/utils/sliders.js"
 //import './core/scroll/simplebar.js'
 
 import App from './components/app/App.js'
+import Filter from './components/filter/Filter.js'
 
 import "../scss/style.scss"
 
@@ -31,6 +32,7 @@ functions.menuClose('[data-menu-close]')
 //functions.tabsAdaptive()
 forms.formFieldsInit()
 forms.formSubmit(true)
+forms.formPricerange()
 //scroll.windowScroll() // => pin header
 //functions.isWebp()
 //functions.addTouchClass()
@@ -48,8 +50,16 @@ forms.formSubmit(true)
 */
 window.addEventListener('load', event => {
     setTimeout(function () {
+        const pageFilter = document.querySelector('[data-filter]')
+
         $html.classList.add('loaded')
         new App()
+
+        if(pageFilter) {
+            new Filter({
+                root: pageFilter
+            })
+        }
     }, 0)
 })
 

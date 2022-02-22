@@ -345,7 +345,7 @@ export function spollers() {
 						hideSpollersBody(spollersBlock);
 					}
 					spollerTitle.classList.toggle('_spoller-active');
-					_slideToggle(spollerTitle.nextElementSibling, 500);
+					_slideToggle(spollerTitle.nextElementSibling, spollersBlock.dataset.duration ? spollersBlock.dataset.duration : 500);
 				}
 				e.preventDefault();
 			}
@@ -354,7 +354,7 @@ export function spollers() {
 			const spollerActiveTitle = spollersBlock.querySelector('[data-spoller]._spoller-active');
 			if (spollerActiveTitle) {
 				spollerActiveTitle.classList.remove('_spoller-active');
-				_slideUp(spollerActiveTitle.nextElementSibling, 500);
+				_slideUp(spollerActiveTitle.nextElementSibling, spollersBlock.dataset.duration ? spollersBlock.dataset.duration : 500);
 			}
 		}
 	}

@@ -1,0 +1,382 @@
+// * * * FILTER
+.page-filter {
+    @extend %Montserrat14-medium;
+    line-height: 100%;
+    position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    &__mobile {
+        display: flex;
+        padding: rem(24) 0;
+        @media(min-width: $mobile) {
+            display: none;
+        } 
+
+        button {
+            @extend %text-inherit;
+            @extend %flex-center;
+            flex: 0 0 50%;
+            background: $silver-light;
+            padding: rem(16);
+
+            & > *:first-child {
+                margin-right: rem(10);
+                max-width: rem(16);
+            }
+
+            &:first-child {
+                background: $silver;
+            }
+        }
+    }
+    &__content { 
+        @media(max-width: $mobile) {
+            display: none;
+        }
+    }
+    &__controls {
+        padding: rem(60) 0;
+        @media(max-width: $mobileSmall) {
+            padding: rem(24) 0;
+        }
+    }
+    &__output {
+        border-top: 1px solid $primary1;
+        transition: all 500ms;
+    }
+}
+
+.filter-controls {
+    position: relative;
+    
+    &__content {
+        display: flex;
+        justify-content: space-between;
+    }
+    &__settings {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+
+        @media(max-width: $mobile) {
+            display: flex;
+            flex-direction: column;
+        }
+        @media(min-width: $mobile) {
+            margin-right: rem(24);
+            row-gap: rem(24);
+        } 
+    }
+    &__item {
+        &:first-child {
+            @media(min-width: $mobile) {
+                margin-right: rem(48);
+            }
+        }
+        &:not(:last-child) {
+            @media(min-width: $mobile) {
+                margin-right: rem(42);
+            }
+        }
+    }
+    &__sort {
+        display: flex;
+        align-items: center;
+
+        .filter-spoller {
+            margin: 0;
+        }
+    }
+}
+
+.filter-spoller {
+
+    @media(max-width: $mobile) {
+        width: 100%;
+        &:not(:first-child) {
+            border-top: 1px solid $primary2;
+        }
+        &:last-child {
+            border-bottom: 1px solid $primary2;
+        }
+        &:first-child {
+            margin-top: rem(16);
+        }
+    }
+
+    &__default {
+        
+        .filter-checkbox {
+            background: $light-grey;
+        }
+    }
+
+    &__icon {
+        @media(max-width: $mobile) {
+            display: none;
+        }
+    }
+
+    &__head {
+        color: $grey;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+
+        @media(min-width: $mobile) {
+            & > *:not(:last-child) {
+                margin-right: rem(8);
+            }
+            &._spoller-active + * {
+                animation: fadeIn 1s forwards;
+                
+                @keyframes fadeIn {
+                    from {
+                        transform: translateX(-100%);
+                        opacity: 0;
+                    }
+                    to {
+                        transform: translateX(0);
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+
+        @media(max-width: $mobile) {
+            font-size: rem(16);
+            line-height: math.div(24, 16);
+            font-weight: 500;
+            display: flex;
+            justify-content: space-between;
+            padding: rem(16) 0;
+            text-transform: uppercase;
+        }
+
+        &._spoller-active {
+            svg {
+                transform: rotate(-180deg);
+            }
+        }
+
+        svg {
+            transition: transform $defaultTransition;
+            path {
+                fill: $grey;
+            }
+        }
+    }
+    &__body {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        padding: rem(24) 0;
+        background: $disabled;
+        margin-bottom: rem(40);
+        z-index: 2;
+
+        @media(max-width: $mobile) {
+            position: relative;
+            top: 0;
+            padding: rem(8) 0 rem(24) 0;
+            background: none;
+            margin-bottom: 0;
+
+            ._container {
+                padding: 0;
+            }
+        }
+    }
+    &__content {
+        position: relative;
+
+        @media(min-width: $mobile) {
+            padding-right: rem(40);
+        }
+    }
+    &__inputs {
+        display: flex;
+        flex-wrap: wrap;
+        gap: rem(16);
+        align-items: center;
+
+        @media(max-width: $mobile) {
+            column-gap: rem(8);
+            row-gap: rem(16);
+        }
+    }
+    &__checkbox {
+        position: relative;
+        display: contents;
+    }
+    &__close {
+        position: absolute;
+        top: 50%;
+        right: 0%;
+        transform: translateY(-50%) rotate(45deg);
+        width: rem(24);
+        height: rem(24);
+        cursor: pointer;
+
+        @media(max-width: $mobile) {
+            display: none;
+        }
+    }
+}
+
+.filter-checkbox {
+    color: $white;
+    padding: rem(12) rem(24);
+    background: $primary-hover;
+    border-radius: rem(30);
+    cursor: pointer;
+    position: relative;
+    transition: all $defaultTransition;
+
+    @media(max-width: $mobile) {
+        padding: rem(16) rem(24);
+    }
+
+    &:hover {
+        background: rgba($primary-hover, 0.6);
+    }
+    
+    &__input {
+        position: absolute;
+		width: 0;
+		height: 0;
+		opacity: 0;
+		visibility: hidden;
+        &:checked + .filter-checkbox__text {
+            color: blue;
+        }
+    }
+    &__text {
+        user-select: none;
+    }
+}
+
+.filter-output {
+    padding: rem(40) 0 rem(56) 0;
+
+    @media(max-width: $mobile) {
+        padding: rem(32) 0;
+    }
+    &__content {
+        display: flex;
+        align-items: center;
+    }
+    &__default {
+        color: $white;
+        padding: rem(12) rem(24);
+        background: $primary-hover;
+        border-radius: rem(30);
+        margin-right: rem(48);
+    }
+    &__head {
+        margin-right: rem(24);
+
+        @media(max-width: $mobile) {
+            display: inline-flex;
+            align-items: center;
+        }
+    }
+    &__body {
+        display: flex;
+        flex-wrap: wrap;
+        gap: rem(16);
+
+        @media(max-width: $mobile) {
+            display: inline-flex;
+            column-gap: rem(8);
+            row-gap: rem(16);
+        }
+    }
+    &__button {
+        display: flex;
+        align-items: center;
+        color: $white;
+        padding: rem(12) rem(24);
+        background: $woodsmoke;
+        border-radius: rem(30);
+
+        @media(max-width: $mobile) {
+            padding: rem(16) rem(24);
+        }
+    }
+    &__close {
+        width: rem(16);
+        height: rem(16);
+        cursor: pointer;
+        margin-left: rem(12);
+
+        svg {
+            transform: rotate(45deg);
+            path {
+                fill: $white;
+            }
+        }
+    }
+    &__reset {
+        color: $grey;
+        padding: rem(12) rem(24);
+        background: transparent;
+        border: 1px solid $grey;
+        border-radius: rem(30);
+        cursor: pointer;
+        transition: all $defaultTransition;
+        font-weight: 500;
+        &:hover {
+            background: $grey;
+            color: $white;
+        }
+    }
+}
+
+// * mobile filter 
+.mobile-filter, .mobile-sort {
+    @media(min-width: $mobile) {
+        display: none;
+    }
+    .mobile-filter__reset {
+        display: block;
+        width: 100%;
+        padding: rem(16) rem(24);
+        border-radius: rem(30);
+        border: 1px solid $grey;
+        margin-bottom: rem(16);
+        font-weight: 500;
+    }
+    .mobile-filter__submit {
+        color: $white;
+        display: block;
+        width: 100%;
+        padding: rem(16) rem(24);
+        border-radius: rem(30);
+        background: $bazaar;
+        font-weight: 500;
+        border: 1px solid $bazaar;
+    }
+}
+
+// * mobile-filter
+.mobile-filter {
+    //transform: translate3d(0, 0, 0);
+}
+
+// * mobile-sort
+.mobile-sort {
+}
+
+// * price-filter
+.price-filter {
+    min-width: rem(380);
+    margin: 0 rem(56) 0 rem(11);
+    
+    @media(max-width: $mobile) {
+        min-width: calc(100% - 20px);
+        margin: rem(30) rem(10);
+    }
+}
